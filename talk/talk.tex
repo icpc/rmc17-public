@@ -1,0 +1,201 @@
+\documentclass{beamer}
+\mode<presentation>
+{
+\usetheme{Warsaw}
+% \setbeamercovered{transparent}
+}
+\usepackage{amsmath,amsfonts,array,eepic,graphics}
+%\newcolumntype{d}{D{.}{.}{-1}}
+\usepackage{times}
+%\usepackage[T1]{fontenc}
+\usepackage{subfigure}
+\title[RMRC 2017 Solution Sketches]
+{2017 Rocky Mountain Regional \\ Programming Contest \\ \ \\ Solution Sketches}
+%\author % (optional, use only with lots of authors)
+%{Howard Cheng}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+\date
+{}
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSubsection[]
+%{
+% \begin{frame}<beamer>
+% \frametitle{Outline}
+% \tableofcontents[currentsection,currentsubsection]
+% \end{frame}
+%}
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command:
+%\beamerdefaultoverlayspecification{<+->}
+
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+\frametitle{Credits}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item Howard Cheng
+\item Brandon Fuller
+\item Zachary Friggstad
+\item Darko Aleksic
+\item Warren MacEvoy
+\item Per Austrin
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{A - Hissing Microphone (52/52)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item Check if the string contains ``ss'' as substring
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{H - Heart Rate (48/50)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item The computation of calculated BPM is straightforward---just use the given formula $\frac{60b}{p}$.
+\item For the minimum actual BPM, we find the maximum time between two
+  beats based on the given measurement.
+  \begin{itemize}
+  \item This is $\frac{p}{b-1}$
+  \item This happens when a beat is detected at the very beginning and
+    the very end of the measurement period $p$.
+  \end{itemize}
+\item Similarly, for the maximum actual BPM, the minimum time between
+  two beats is $\frac{p}{b+1}$ --- if a beat occurs just before the
+  measurement period and another beat occurs just after.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{K - Frosh Week (44/49)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item Sort both tasks and quiet intervals.
+\item For each quiet interval, find the longest task that can fit - greedy works (do not consider already checked tasks again).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{E - Palindromic Password (39/52)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item Observation (hinted in statement) - six digit palindromes are relatively close to each other (e.g. 234432 - 235532).
+\item For each difference $d$(starting with 0) check if $N-d$ or $N+d$ are palindromes.
+\item $N=100000$ is a special case
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{G - Decisions, Decisions (11/14)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item This can be approached top-down or bottom-up.
+\item Top-down approach: 
+  \begin{itemize}
+  \item If the root is a leaf, then it can be represented as one node
+    (with the labelled value);
+  \item Otherwise, recursively inquire the left and right subtree.
+  \item If both subtrees can be represented as one node and their values
+    are the same, then the entire tree can be merged.
+  \end{itemize}
+\item Can be done in $O(2^n)$ steps.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{J - Particle Collision (6/13)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item If a circle centered at $(x_1,y_1)$ with radius $r$ is moving in
+  the direction $(x_v, y_v)$, we can determine if the circle centered at
+  $(x_2, y_2)$ is hit by solving:
+  \[ || (x_1 + t\cdot x_v - x_2, y_1 + t\cdot y_v - y_2) || = 2r \]
+  This is a quadratic equation in $t$.
+\item Find first point of intersection (smallest $t > 0$), determine the
+  next direction.
+\item Just try all the cases and simulate.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{C - Multiplication Game (6/16)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item Two parts
+\item First part - factor $N$
+\item Second part - minimax algorithm
+\item Alternatively - case analysis (odd/even number of primes, who cannot win and what can they try in order to draw?)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{F - Flow Free (4/6)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item Try all colorings of the grid ($4^8$ or $3^{10}$, depending on the number of colors)
+\item For each fully colored board, for each color, try to find a path between given cells that contains all cells of the same color.
+\item Or just try paths of each colour at the same time.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{D - Polyline Simplification (3/17)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item The main task is to repeatedly find the interior point with the smallest
+  associated triangle and remove it.
+\item Removing a point removes one triangle but changes the two neighbouring
+  triangles.
+\item Use a priority queue (heap) to find the next point to remove.
+\item Care has to be taken to invalidate neighbouring triangles when a
+  point is removed (many approaches).
+\item Complexity is $O(n \log n)$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{I - Initials (0/9)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item DP - State is current student and the number of added characters to the previous one's initials, such that order matches their full names (minimize added characters).
+\item DP state can also contain current student and number of removed characters such that order is preserved (maximize removed characters).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{B - Open-Pit Mining (0/11)}
+\begin{itemize}
+\setlength\itemsep{0.5\baselineskip}
+\item For each block, represent it as a vertex with a value $w_i = v_i - c_i$.
+\item For each relationship ``$i$ blocks $j$'', add an edge $j \rightarrow i$
+  with infinite capacity.
+\item Add a source node, connecting source to all blocks with $w_i \geq 0$ with
+  capacity $w_i$.
+\item Add a sink node, connecting all blocks with $w_i < 0$ to the sink, with
+  capacity $-w_i$.
+\item If $m$ is the minimum cut separating source and sink, then the answer
+  is $\left(\sum_{w_i > 0} w_i\right) - m$.
+\item $m$ can be found by a maximum flow algorithm.
+\end{itemize}
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,11 @@
+source: Rocky Mountain Regional Programming Contest 2017
+source_url: http://org.coloradomesa.edu/~wmacevoy/rmrc/2017/index.html
+name: Polyline Simplification
+author: 
+  - Brandon Fuller
+  - Howard Cheng
+license: cc by-sa  
+rights_owner: Rocky Mountain Regional Programming Contest 2017
+limits:
+  time_multiplier: 1.7
+ 

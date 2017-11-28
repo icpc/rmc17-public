@@ -1,0 +1,9 @@
+source: 2017 Rocky Mountain Regional Contest
+name: Palindromic Password
+source_url: http://org.coloradomesa.edu/~wmacevoy/rmrc/2017/index.html
+license: cc by-sa
+#libraries: gmp
+#languages: c cpp java python2 python3
+limits:
+  time_multiplier: 2.8
+

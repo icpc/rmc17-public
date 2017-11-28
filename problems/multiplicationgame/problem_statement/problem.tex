@@ -1,0 +1,26 @@
+\problemname{Multiplication Game}
+
+Alice and Bob are in their class doing drills on multiplication and division.
+They quickly get bored and instead decide to play a game they invented.
+
+The game starts with a target integer $N \geq 2$, and an integer $M =
+1$.  Alice and Bob take alternate turns.  At each turn, the player
+chooses a prime divisor $p$ of $N$, and multiply $M$ by $p$.  
+If the player's move makes the value of $M$ equal to the target $N$, 
+the player wins.  If $M > N$, the game is a tie.
+
+Assuming that both players play optimally, who (if any) is going to
+win?
+\section*{Input}
+
+The first line of input contains $T$ ($1 \leq T \leq 10\,000$), the
+number of cases to follow.  Each of the next $T$ lines describe a
+case.  Each case is specified by $N$ ($2 \leq N \leq 2^{31}-1$)
+followed by the name of the player making the first turn.  The name is
+either \texttt{Alice} or \texttt{Bob}.
+
+\section*{Output}
+
+For each case, print the name of the winner (\texttt{Alice} or
+\texttt{Bob}) assuming optimal play, or \texttt{tie} if there is no
+winner.

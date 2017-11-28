@@ -1,0 +1,35 @@
+\problemname{Flow Free}
+
+\illustration{0.3}{flowfree}{}
+
+Flow Free is a puzzle that is played on a 2D grid of cells,
+with some cells marked as endpoints of certain colors and the rest of cells being blank.
+
+To solve the puzzle, you have to connect each pair of colored endpoints with a path, following these rules:
+
+\begin{itemize}
+\item there is a path connecting two points with the same color, and that path also has that color
+\item all cells in the grid are used and each cell belongs to exactly one path (of the same color as the endpoints of the path)
+\end{itemize}
+
+The rules imply that different colored paths cannot intersect.
+
+The path is defined as a connected series of segments where each segment connects two neighbouring cells.
+Two cells are neighbours if they share a side (so all segments are either horizontal or vertical).
+By these definitions and rules above, each colored cell will be an endpoint of exactly one segment and each blank cell will be an endpoint of exactly two segments.
+
+In this problem we will consider only the $4 \times 4$ puzzle, with $3$ or $4$ pairs of colored endpoints given.
+
+Your task is to determine if a given puzzle is solvable or not.
+
+\section*{Input}
+
+The input consists of $4$ lines, each line containing $4$ characters.  
+Each character is from the set $\{R, G, B, Y, W\}$ where $W$ denotes the 
+blank cells and the other characters denote endpoints with the specified 
+color. You are guaranteed that there will be exactly $3$ or $4$ pairs 
+of colored cells. If there are $3$ colors in the grid, $Y$ will be 
+omitted.
+
+\section*{Output}
+On a single line output either ``\texttt{solvable}'' or ``\texttt{not solvable}'' (without the quotes).

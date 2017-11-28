@@ -1,0 +1,8 @@
+source: Rocky Mountain Regional Programming Contest 2017
+source_url: http://org.coloradomesa.edu/~wmacevoy/rmrc/20167/index.html
+license: cc by-sa
+name: Multiplication Game
+author: Howard Cheng
+limits:
+  time_multiplier: 1.5
+

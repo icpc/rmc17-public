@@ -1,0 +1,8 @@
+source: Rocky Mountain Regional Programming Contest 2017
+source_url: http://org.coloradomesa.edu/~wmacevoy/rmrc/2017/index.html
+license: cc by-sa
+name: Frosh Week
+author: Zachary Friggstad
+limits:
+  time_multiplier: 2.5
+

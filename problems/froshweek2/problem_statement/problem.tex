@@ -1,0 +1,37 @@
+\problemname{Frosh Week}
+
+Professor Zac is trying to finish a collection of tasks during the first week
+at the start of the term.
+He knows precisely how long each task will take, down to the millisecond.
+Unfortunately, it is also
+Frosh Week. Zac's office window has a clear view of the stage where loud music
+is played. He cannot focus on any task when music is blaring.
+
+The event organizers are also very precise.  They supply Zac with intervals
+of time when music will not be playing. These intervals are specified by
+their start and end times down to the millisecond.
+
+Each task that Zac completes must be completed in one quiet interval.
+He cannot pause working on a task when music plays (he loses his train of
+thought). Interstingly, the lengths of the tasks and quiet intervals are such
+that it is impossible to finish more than one task per quiet interval!
+
+Given a list of times $t_i$ (in milliseconds) that each task will take
+and a list of times $\ell_j$ (in milliseconds) specifying the lengths of the
+intervals when no music is being played, what is the maximum number of tasks
+that Zac can complete?
+
+\section*{Input} The first line of input contains a pair of integers $n$ 
+and $m$, where $n$ is the number of tasks and $m$ is the number of time 
+intervals when no music is played. The second line consists of a list of 
+integers $t_1, t_2, \ldots, t_n$ indicating the length of time of each 
+task. The final line consists of a list of times $\ell_1, \ell_2, 
+\ldots, \ell_m$ indicating the length of time of each quiet interval 
+when Zac is at work this week.
+
+You may assume that $1 \leq n,m \leq 200,000$ and $100,000 \leq t_i, \ell_j \leq 199,999$
+for each task $i$ and each quiet interval $j$.
+
+\section*{Output}
+Output consists of a single line containing a single integer indicating the
+number of tasks that Zac can accomplish from his list during this first week.
